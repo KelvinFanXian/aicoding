@@ -77,7 +77,7 @@
 ## 仓库 Skill 路由
 
 - 面对陌生技术方案、无法独立核验 AI 结论或担心 AI 自由发挥时，使用 `skills/bridge-ai-knowledge-gaps/SKILL.md`，把结论转成有证据、可理解、可逐步验证的决策。
-- 功能主体完成后进入本地联调、连续收集缺陷并快速修复时，使用 `skills/run-local-debug-loop/SKILL.md`，建立基线、缺陷队列、优先级和“修复后由用户验证”的闭环。
+- 功能主体完成后进入本地联调、需要保持前后端随时可用并连续修复缺陷时，使用 `skills/run-local-debug-loop/SKILL.md`，建立运行基线、可用性检查、缺陷队列和“修复后由用户验证”的闭环。
 - 页面较多、角色较多或需要逐页记录人工验收进度时，使用 `skills/track-manual-ui-acceptance/SKILL.md`，从当前代码盘点页面并生成由易到难、带直达入口和问题编号的检查清单。
 - 接手陌生项目并被要求尽快启动、编译或进入首个可观察页面时，使用 `skills/start-unfamiliar-project-fast/SKILL.md`，先做环境预检和批量诊断，再用最低成本探针逐级验证。
 - 评审国内企业审批、OA/BPM 的需求或原型，尤其需要识别概念混维、低代码痕迹和无真实场景的平台功能时，使用 `skills/review-enterprise-workflow-design/SKILL.md`。

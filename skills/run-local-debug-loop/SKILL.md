@@ -1,11 +1,11 @@
 ---
 name: run-local-debug-loop
-description: Run a controlled local debugging loop after a feature is substantially implemented. Use when the user wants to start local services, collect multiple bugs, prioritize and fix them iteratively, and retain user-owned manual verification; do not use for initial feature development or unattended production troubleshooting.
+description: Run a controlled, continuously available local debugging loop after a feature is substantially implemented. Use when the user wants local services kept ready while collecting, prioritizing, fixing, and manually verifying multiple bugs; do not use for initial feature development or unattended production troubleshooting.
 ---
 
 # Run Local Debug Loop
 
-把功能主体完成后的微调阶段变成可追踪的闭环：固定代码与环境基线，连续收集问题，按影响排序，逐项复现、修复和验证。目标是减少边看边改造成的遗漏，而不是扩展原需求。
+把功能主体完成后的微调阶段变成可追踪的闭环：固定代码与环境基线，保持本地环境可用，连续收集问题，按影响排序，逐项复现、修复和验证。目标是让用户随时可以继续走查，并减少边看边改造成的遗漏，而不是扩展原需求。
 
 ## 开始前
 
@@ -13,6 +13,28 @@ description: Run a controlled local debugging loop after a feature is substantia
 2. 读取项目自己的启动、数据库、DDL 和提交规则；优先使用项目已有启动脚本。
 3. 说明前后端地址、当前账号角色以及后端连接的是本地数据还是共享环境。连接共享环境时，任何造数、作废、重启等有副作用动作都先取得授权。
 4. 先做健康检查和一个最短业务请求，确认本地服务确实运行当前代码，而不是只看到端口已监听。
+
+## 保持本地环境可用
+
+“可用”至少同时满足：前端入口可访问、后端健康检查与最短业务探针通过、运行进程来自本轮确认的工作树和分支、必要外部依赖可连接。只看到端口或进程存在不能判定为可用。
+
+```mermaid
+flowchart LR
+    A[锁定代码与环境基线] --> B[启动长期运行的本地服务]
+    B --> C{健康检查与业务探针}
+    C -- 失败 --> D[定位并恢复服务或依赖]
+    D --> C
+    C -- 通过 --> E[等待走查或处理缺陷]
+    E --> F[代码或配置发生变化]
+    F --> G[热更新或按需重建]
+    G --> C
+```
+
+- 前后端使用可持续观察的后台进程或终端会话启动，并保留端口、进程或会话标识、日志位置和启动命令，避免每次从头寻找。
+- 进入每轮 Debug、准备让用户点击页面、以及重建或重启之后，都先做一次轻量存活检查；不设置无意义的高频轮询。
+- 发现服务退出或当前代码与运行基线不一致时，优先恢复环境，再继续分析页面问题；探针未通过时不得声称“本地可用”。
+- 调试窗口尚未结束时，不主动停止可继续使用的本地服务。只有用户要求停止、端口冲突、资源风险或项目规则要求时才关闭，并明确告知当前不可用状态。
+- “随时可用”限于当前调试窗口和本机仍在运行的条件，不承诺跨电脑重启、休眠、网络中断或执行环境回收后永久驻留；恢复后重新验证即可。
 
 ## 缺陷队列
 
@@ -56,4 +78,4 @@ description: Run a controlled local debugging loop after a feature is substantia
 
 ## 收口
 
-队列为空或只剩外部阻塞项时，输出：已验证项、待用户验证项、阻塞项、遗留增强和当前运行基线。是否合并、发布或结束 Debug 模式由用户决定。
+队列为空或只剩外部阻塞项时，输出：已验证项、待用户验证项、阻塞项、遗留增强、当前运行基线和本地服务可用状态。是否合并、发布或结束 Debug 模式由用户决定。
