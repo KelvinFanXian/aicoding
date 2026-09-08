@@ -1,0 +1,4 @@
+interface:
+  display_name: "Bridge AI Knowledge Gaps"
+  short_description: "Turn unfamiliar AI conclusions into evidence-backed decisions"
+  default_prompt: "Use $bridge-ai-knowledge-gaps to assess this unfamiliar AI-generated technical recommendation before I adopt it."

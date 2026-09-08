@@ -1,0 +1,4 @@
+interface:
+  display_name: "Evolve Design Docs"
+  short_description: "Build human-readable ER-first design documentation"
+  default_prompt: "Use $evolve-design-docs to structure and improve these evolving requirement and design documents."

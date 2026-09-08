@@ -1,0 +1,18 @@
+# 本地观察区：允许保存项目路径、状态、摘录和验证证据，禁止进入 Git
+.local/
+
+# 临时工作区
+.scratch/
+tmp/
+
+# 系统与编辑器文件
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 常见敏感或本地配置
+.env
+.env.*
+*.local
