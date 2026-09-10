@@ -1,6 +1,6 @@
 ---
 name: bridge-ai-knowledge-gaps
-description: Turn unfamiliar AI-generated technical conclusions into evidence-backed, human-reviewable decisions. Use when the user cannot independently verify a proposed requirement interpretation, architecture, implementation plan, or completion claim; do not use for routine, well-specified implementation or ordinary code review.
+description: Explain unfamiliar requirement details and technical conclusions through concrete examples and diagrams, turning them into evidence-backed, human-reviewable decisions. Use when the user asks what a field, formula, rule, or open question means, how to answer it, or cannot independently verify a proposed interpretation, plan, or completion claim; do not use for routine, well-specified implementation or ordinary code review.
 ---
 
 # Bridge AI Knowledge Gaps
@@ -51,6 +51,28 @@ description: Turn unfamiliar AI-generated technical conclusions into evidence-ba
 - 不为了消除所有理论未知而阻塞编码；可逆且验证成本低的实现细节允许在切片中确认。
 
 ## 输出方式
+
+### 用户追问细节时
+
+用户问“什么意思”“怎么回答”“哪个字段有疑问”时，默认按以下方式解释，深度随问题收缩：
+
+```mermaid
+flowchart LR
+    A[指出具体字段或业务动作] --> B[一句话解释疑问]
+    B --> C[用同一个简单例子说明]
+    C --> D[画出状态变化或方案分支]
+    D --> E[说明待确认选择及回答示例]
+```
+
+- 先定位页面、字段或动作，再说明它影响的业务结果，不从问题代号或术语展开。
+- 用一组标为示例的简单数字贯穿解释。公式写出单位、计算过程和结果；累计类问题区分已有数量、本次数量、计入时机和更正方式。
+- 涉及流转、累计或多个选择时，优先用简短 Mermaid 图；相互独立的选择分开画。图后只补关键边界，不再完整复述图。
+- 主动核算提供的例子。如果数字在另一种口径下成立，应指出口径差异，不沿用“怎么算都不对”等未经证实的结论，也不据此揣测设计者。
+- 明确区分已确认规则与建议方案；建议画入图时标明“待确认”。不要把可选方案画成已定流程。
+- 最后列出真正需要业务决定的最小选择；用户问“怎么回答”时给一段可转发的答复，并说明适用条件。实现一致性由开发解决，不仅为开发方便而增加业务限制。
+- 用户只问某个字段或一句话含义时，直接短答；不要每次强制展开完整图解。解释请求本身不授权修改项目文件。
+
+### 方案评审时
 
 先用普通语言给出结论，再按需要补充：
 

@@ -19,7 +19,7 @@
 
 | 场景 | 使用入口 |
 | --- | --- |
-| 陌生技术领域中核验 AI 方案，控制未知风险 | `skills/bridge-ai-knowledge-gaps/SKILL.md` |
+| 图解需求细节、字段与公式，核验陌生方案并明确待确认选择 | `skills/bridge-ai-knowledge-gaps/SKILL.md` |
 | 功能主体完成后保持本地环境可用，持续联调、修复与验证 | `skills/run-local-debug-loop/SKILL.md` |
 | 为多页面、多角色功能建立人工验收进度清单 | `skills/track-manual-ui-acceptance/SKILL.md` |
 | 快速启动陌生项目，避免逐错试错和重复全量构建 | `skills/start-unfamiliar-project-fast/SKILL.md` |
