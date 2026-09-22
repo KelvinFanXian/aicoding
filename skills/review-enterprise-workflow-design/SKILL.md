@@ -1,6 +1,6 @@
 ---
 name: review-enterprise-workflow-design
-description: Review Chinese enterprise approval, OA, and BPM requirements or prototypes before implementation. Use to correct mixed concepts, low-code or engine artifacts, unnecessary platform features, and unclear workflow semantics; do not use for engine-only code review or a routine workflow bug fix.
+description: Review Chinese enterprise approval, OA, and BPM requirements or prototypes before implementation. Use to clarify node behaviors, platform scope, mixed concepts, and consistency protections when simplifying workflows; do not use for engine-only code review or a routine workflow bug fix.
 ---
 
 # Review Enterprise Workflow Design
@@ -12,7 +12,7 @@ description: Review Chinese enterprise approval, OA, and BPM requirements or pro
 - 原型是需求表达和验收依据之一，不默认其分类、命名和交互都正确。
 - 用户已确认的业务语义优先于原型；正式需求优先于平台现状；现有代码只能证明已有能力，不能反向定义需求。
 - 借鉴国内企业审批产品的常见范式，但没有可靠来源时不要声称某个具体产品一定如何实现。
-- 先判断业务是否需要，再讨论配置项和技术实现；不为“平台完整性”建设没有真实场景的能力。
+- 先分清交付目标是单个业务，还是以业务为载体建设平台能力。单一示例没用到某能力，不等于该能力没有需求；平台范围以用户确认的能力目标为准，再选择代表性场景验证。不为未授权的“平台完整性”自行扩项。
 - 优先复用稳定的流程内核，是否保留现有产品界面和配置模型要单独判断。
 
 ## 先建立最小概念模型
@@ -30,7 +30,7 @@ description: Review Chinese enterprise approval, OA, and BPM requirements or pro
 
 ## 做维度正交检查
 
-逐项确认配置属于哪个维度，不允许互相替代或揉成一个枚举：
+逐项确认配置属于哪个维度。纠正混维是重新组织语义，不是顺手删除能力；界面可以合并呈现，底层含义仍应可区分：
 
 | 维度 | 回答的问题 |
 | --- | --- |
@@ -47,9 +47,10 @@ description: Review Chinese enterprise approval, OA, and BPM requirements or pro
 
 - 审批与办理是节点行为；不要把抄送并列为阻塞型“任务类型”。
 - 抄送是旁路通知：维护接收人集合、触发时机和已阅记录，不参与审批结果。
+- 设计器上的“抄送节点”可以表达通知时机，并不意味着运行时必须产生待办。不要仅凭界面节点名称判定建模错误；“审批/办理”行为字段也不因抄送被拆出就必然冗余。
 - 办理人来源只决定候选集合；抢办、会签等决定多人如何完成，两者正交。
 - 转办是负责人永久变更；委派是临时交办后回到原负责人。没有真实场景就不要同时暴露。
-- 退回是在存活实例内回到前序步骤；作废或终止才结束实例。不要用模糊的“结束流程”混合两者。
+- 若需求规定退回后继续同一实例，就按存活实例回到目标步骤建模，不偷换成终止后重开；这不要求复用同一个运行时任务 ID。作废、正常完成和退回的区别按业务规则定义，不将某个项目口径当通用引擎语义。
 - 模板、发布版本、运行实例和当前任务不是同一层对象，不要做成含义相近的并列入口。
 
 ## 识别平台痕迹
@@ -77,6 +78,20 @@ description: Review Chinese enterprise approval, OA, and BPM requirements or pro
 5. 最小改造是扩展、适配，还是重做产品层。
 
 避免“界面不好所以重写引擎”，也避免“内核能用所以原页面必须保留”。常见合理边界是保留成熟流程内核，重做业务产品层和配置入口。
+
+## 简化流程时追踪原有保护
+
+从多级审批改为直接审核，界面变简单，数据一致性责任未必减少。先找出原流程实际承担的占用隔离、生效时机、授权与留痕，再判断哪些保留、替代或明确取消。
+
+```mermaid
+flowchart LR
+    A[删减流程机制] --> B[它原来保护什么]
+    B --> C[同一对象有哪些写入与撤销入口]
+    C --> D[在生效和撤销处安排必要保护]
+    D --> E[交错执行验证，不只测单条顺序流程]
+```
+
+例如两张草稿都基于旧值：后一张审核是否覆盖前一张？撤销前一张是否抹掉后来修改？比较旧值、版本或加锁是实现选项，关键是校验与写入之间不能失去保护。历史留存深度、是否允许本人审核则是业务取舍，不借一致性修复强加治理规则。
 
 ## 评审步骤
 

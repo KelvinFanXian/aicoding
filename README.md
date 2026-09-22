@@ -27,6 +27,7 @@
 | 创建或持续演进人类可读的需求与设计文档 | `skills/evolve-design-docs/SKILL.md` |
 | 清理发散讨论残留，形成可开发的当前基线 | `skills/converge-requirement-docs/SKILL.md` |
 | 独立核验其他评审者或模型的意见 | `skills/evaluate-external-review/SKILL.md` |
+| 核验同步接口换源、字段归属、增量与旧数据退出 | `skills/verify-data-sync-contract/SKILL.md` |
 | 判断新经验是否值得沉淀为 Skill | `skills/aicoding-skill-curator/SKILL.md` |
 
 Agent 只应加载与当前问题有关的最少内容。仓库经验提供判断框架，不能替代当前任务的正式需求、真实代码和验证结果。
@@ -48,6 +49,8 @@ flowchart LR
     E --> E2[evaluate-external-review]
     Q --> F[企业审批设计评审]
     F --> F1[review-enterprise-workflow-design]
+    Q --> H[数据同步与接口换源]
+    H --> H1[verify-data-sync-contract]
     Q --> G[发现可复用工作方法]
     G --> G1[aicoding-skill-curator]
 ```

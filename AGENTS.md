@@ -78,12 +78,13 @@
 
 - 面对陌生技术方案、无法独立核验 AI 结论或担心 AI 自由发挥时，使用 `skills/bridge-ai-knowledge-gaps/SKILL.md`，把结论转成有证据、可理解、可逐步验证的决策。
 - 功能主体完成后进入本地联调、需要保持前后端随时可用并连续修复缺陷时，使用 `skills/run-local-debug-loop/SKILL.md`，建立运行基线、可用性检查、缺陷队列和“修复后由用户验证”的闭环。
-- 页面较多、角色较多或需要逐页记录人工验收进度时，使用 `skills/track-manual-ui-acceptance/SKILL.md`，从当前代码盘点页面并生成由易到难、带直达入口和问题编号的检查清单。
+- 页面较多、角色较多或需要逐页记录人工验收进度时，使用 `skills/track-manual-ui-acceptance/SKILL.md`，按模块分组、组内由易到难，提供真实入口，分开人工验收与 AI 走查结果。
 - 接手陌生项目并被要求尽快启动、编译或进入首个可观察页面时，使用 `skills/start-unfamiliar-project-fast/SKILL.md`，先做环境预检和批量诊断，再用最低成本探针逐级验证。
 - 评审国内企业审批、OA/BPM 的需求或原型，尤其需要识别概念混维、低代码痕迹和无真实场景的平台功能时，使用 `skills/review-enterprise-workflow-design/SKILL.md`。
 - 创建、评审、重组或持续演进需求与软件设计文档时，使用 `skills/evolve-design-docs/SKILL.md`，遵循人类阅读优先、ER 建模优先、Mermaid 按问题选型和正文去噪的文档习惯。
 - 发散讨论后需要清理需求或设计文档、消除旧方案残留并形成开发基线时，使用 `skills/converge-requirement-docs/SKILL.md`。
 - 收到其他评审者或模型的意见，需要将其作为参考并保留独立判断时，使用 `skills/evaluate-external-review/SKILL.md`。
+- 对接数据同步、切换源接口，或调整记录标识与字段覆盖规则时，使用 `skills/verify-data-sync-contract/SKILL.md`，核验粒度、身份、字段归属、增量与退出路径。
 - 维护模式下发现可跨项目复用、已经验证且会改变后续工作方式的方法时，使用 `skills/aicoding-skill-curator/SKILL.md` 判断是否值得沉淀；只读模式不得因此修改本仓库。
 
 ## 内容质量

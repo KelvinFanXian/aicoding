@@ -5,7 +5,7 @@ description: Detect reusable, validated AI-coding methods emerging from ongoing 
 
 # Aicoding Skill Curator
 
-识别对话中已经成形的 Skill 机会，并在合适的时机询问用户是否沉淀。职责是提醒，不是自动创建。
+识别工作中已经成形的 Skill 机会。未获维护授权时只提醒；用户已明确要求提炼、更新经验库时，直接在授权范围内完成，不重复询问。
 
 ## 判断是否值得提醒
 
@@ -34,6 +34,8 @@ description: Detect reusable, validated AI-coding methods emerging from ongoing 
 
 - 使用 `skill-creator` 完成创建或更新；先检查已有 Skill，能合并则不重复新增。
 - 从事实中提炼行为规则，不照搬当前对话和具体解决方案。
+- 面向有能力的模型，只补它容易遗漏的判断依据、反例或验证办法；“认真分析、充分测试”等常识不扩写成条款。能用一条条件化原则解释多个缺陷，就不逐缺陷立规矩。
+- 判断一项经验的价值：它会让模型在什么场景作出不同决定？用来源中的反例检验这点；文档记载的实测与本轮亲自复现分开表述，未经核验的归因不升级为规则。
 - 明确适用条件、反例和停止条件，避免把局部经验绝对化。
 - 遵守仓库公开边界：项目证据只留在 `.local/`，Skill 中不得出现可识别项目的信息。
 - 创建后验证 Skill 的结构，并说明它将在什么情况下触发。
