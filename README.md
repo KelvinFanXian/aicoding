@@ -2,6 +2,8 @@
 
 一个持续演进的 AI 编程经验库。
 
+查看 [更新日志](CHANGELOG.md)，了解哪些经验新建了 Skill、哪些归纳进了已有 Skill。
+
 这里不收集具体项目资料，而是从真实开发过程中提炼可以跨项目复用的经验：需求澄清、领域建模、软件设计、编码协作、验证方法，以及人与 AI 共同工作的纪律。
 
 ## 给 Agent 的入口
@@ -34,6 +36,7 @@
 | 清理发散讨论残留，形成可开发的当前基线 | `skills/converge-requirement-docs/SKILL.md` |
 | 独立核验其他评审者或模型的意见 | `skills/evaluate-external-review/SKILL.md` |
 | 核验同步接口换源、字段归属、增量与旧数据退出 | `skills/verify-data-sync-contract/SKILL.md` |
+| 按数据链路决定改动落点：核验字段可达性，快速修复时复用已有取值逻辑 | [trace-data-change-path](skills/trace-data-change-path/SKILL.md) |
 | 判断新经验是否值得沉淀为 Skill | `skills/aicoding-skill-curator/SKILL.md` |
 
 Agent 只应加载与当前问题有关的最少内容。仓库经验提供判断框架，不能替代当前任务的正式需求、真实代码和验证结果。
@@ -57,6 +60,8 @@ flowchart LR
     F --> F1[review-enterprise-workflow-design]
     Q --> H[数据同步与接口换源]
     H --> H1[verify-data-sync-contract]
+    Q --> I[按数据链路决定改哪里、复用什么]
+    I --> I1[trace-data-change-path]
     Q --> G[发现可复用工作方法]
     G --> G1[aicoding-skill-curator]
 ```
