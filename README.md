@@ -27,17 +27,17 @@
 
 | 场景 | 使用入口 |
 | --- | --- |
-| 图解需求细节、字段与公式，核验陌生方案并明确待确认选择 | `skills/bridge-ai-knowledge-gaps/SKILL.md` |
-| 功能主体完成后保持本地环境可用，持续联调、修复与验证 | `skills/run-local-debug-loop/SKILL.md` |
-| 为多页面、多角色功能建立人工验收进度清单 | `skills/track-manual-ui-acceptance/SKILL.md` |
-| 快速启动陌生项目，避免逐错试错和重复全量构建 | `skills/start-unfamiliar-project-fast/SKILL.md` |
-| 评审企业审批、OA/BPM 需求与原型，纠正概念混维和平台痕迹 | `skills/review-enterprise-workflow-design/SKILL.md` |
-| 创建或持续演进人类可读的需求与设计文档 | `skills/evolve-design-docs/SKILL.md` |
-| 清理发散讨论残留，形成可开发的当前基线 | `skills/converge-requirement-docs/SKILL.md` |
-| 独立核验其他评审者或模型的意见 | `skills/evaluate-external-review/SKILL.md` |
-| 核验同步接口换源、字段归属、增量与旧数据退出 | `skills/verify-data-sync-contract/SKILL.md` |
+| 图解需求细节、字段与公式，核验陌生方案并明确待确认选择 | [bridge-ai-knowledge-gaps](skills/bridge-ai-knowledge-gaps/SKILL.md) |
+| 功能主体完成后保持本地环境可用，持续联调、修复与验证 | [run-local-debug-loop](skills/run-local-debug-loop/SKILL.md) |
+| 为多页面、多角色功能建立人工验收进度清单 | [track-manual-ui-acceptance](skills/track-manual-ui-acceptance/SKILL.md) |
+| 快速启动陌生项目，避免逐错试错和重复全量构建 | [start-unfamiliar-project-fast](skills/start-unfamiliar-project-fast/SKILL.md) |
+| 评审企业审批、OA/BPM 需求与原型，纠正概念混维和平台痕迹 | [review-enterprise-workflow-design](skills/review-enterprise-workflow-design/SKILL.md) |
+| 创建或持续演进人类可读的需求与设计文档 | [evolve-design-docs](skills/evolve-design-docs/SKILL.md) |
+| 清理发散讨论残留，形成可开发的当前基线 | [converge-requirement-docs](skills/converge-requirement-docs/SKILL.md) |
+| 独立核验其他评审者或模型的意见 | [evaluate-external-review](skills/evaluate-external-review/SKILL.md) |
+| 核验同步接口换源、字段归属、增量与旧数据退出 | [verify-data-sync-contract](skills/verify-data-sync-contract/SKILL.md) |
 | 按数据链路决定改动落点：核验字段可达性，快速修复时复用已有取值逻辑 | [trace-data-change-path](skills/trace-data-change-path/SKILL.md) |
-| 判断新经验是否值得沉淀为 Skill | `skills/aicoding-skill-curator/SKILL.md` |
+| 判断新经验是否值得沉淀为 Skill | [aicoding-skill-curator](skills/aicoding-skill-curator/SKILL.md) |
 
 Agent 只应加载与当前问题有关的最少内容。仓库经验提供判断框架，不能替代当前任务的正式需求、真实代码和验证结果。
 
