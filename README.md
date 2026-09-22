@@ -6,7 +6,7 @@
 
 ## 给 Agent 的入口
 
-把“aicoding”作为本经验库的简称。Agent 能访问本仓库时，先读取根目录 [AGENTS.md](AGENTS.md)，再按当前任务选择所需 Skill 或经验文章，不必通读全部文件。
+把“aicoding”作为本经验库的简称。Agent 能访问本仓库时，先读取根目录 [AGENTS.md](AGENTS.md)，再按当前任务选择所需 Skill，不必通读全部文件。
 
 要让其他项目中的 Agent **只听到“参考 aicoding”就知道怎么做**，还需在该 Agent 的全局或项目入口指令中设置一次短路由；本仓库里的指令只有在 Agent 找到并读取仓库后才会生效。可复制这段话：
 
@@ -72,17 +72,12 @@ flowchart LR
 ## 仓库结构
 
 ```text
-notes/       可公开的通用经验
 skills/      可被 Agent 直接执行的工作方法
 scripts/     内容安全与质量检查
 .local/      本地观察状态和项目证据（Git 忽略）
 ```
 
-## 当前主题
-
-- [从需求讨论收敛到开发基线](notes/从需求讨论收敛到开发基线.md)
-- [ER 优先的文档演进方法](notes/ER优先的文档演进方法.md)
-- [按数据链路决定改动落点](notes/按数据链路决定改动落点.md)
+日常使用从 `AGENTS.md` 路由到相应 Skill。新经验优先更新现有 Skill，不另建平行的文章入口。
 
 ## 经验沉淀流程
 
