@@ -1,16 +1,18 @@
 ---
 name: run-ai-ui-walkthrough
-description: Stabilize AI-driven browser walkthroughs of web pages when clicks, typing, or visibility checks intermittently fail. Use when an AI agent operates a real browser for page-by-page verification and hits stuck steps, misread dialogs, or repeated retries; provides timeboxing, state re-checking, scoped selectors, fallback input paths, and non-destructive verification.
+description: Stabilize AI-driven browser walkthroughs of web pages when clicks, typing, or visibility checks intermittently fail. Use when an AI agent operates a real browser for page-by-page verification and hits stuck steps, misread dialogs, or repeated retries; provides plan-first step timeboxes, bounded waits, state re-checking, scoped selectors, fallback input paths, and non-destructive verification.
 ---
 
 # Run AI UI Walkthrough
 
 AI 驱动真实浏览器逐页走查时，操作失效和状态误判是常态而非例外：点击落空、键入丢失、弹层叠开、同一查询前后行为不一致。核心纪律是四条：每步限时、先核对状态再重试、输入留降级路径、用零请求证据做无破坏验证。
 
-## 每步一个时间盒
+## 规划先行，每步带时间盒
 
-- 给每个走查步骤设定预期时间（表单级验证 1~3 分钟量级，页面级放宽），超时立刻停止重试，转入诊断或降级；「再试一次」不是处理方式。
-- 同一操作失败两次即视为该方法在当前页面失效，第三次必须换路径：换定位策略、换输入方式或换数据组合。时间盒可按页面复杂度调整，但「失败两次换路径」不放宽。
+- 走查开始前先产出计划：步骤清单、每步预期时间、超时时的动作（检查原因 / 降级 / 记录受阻）。计划写成用户可见的一张表，而不是留在脑中的顺序感；用户据此才知道「现在该走到哪、卡了会多久说一声」。
+- 每个步骤按预期时间执行：表单级验证 1~3 分钟量级，页面级放宽；超时立刻停止当前动作，转入诊断或降级。「再试一次」不是处理方式。
+- 等待也是操作，同样设上限。等页面加载、等弹层出现、等数据返回时使用带超时的等待；超时未出现就立刻检查页面实际状态与网络请求，不无限等待、不无限轮询、不静默挂起。
+- 同一操作失败两次即视为该方法在当前页面失效，第三次必须换路径：换定位策略、换输入方式或换数据组合。时间盒可按页面复杂度调整，但「失败两次换路径」和「等待必须设上限」不放宽。
 
 ## 状态核对先于重试
 
