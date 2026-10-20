@@ -25,53 +25,36 @@
 
 仅提供目录、要求参考、调用 Skill 或发现内容可改进，都不等于获得写权限。
 
-### 能力索引
+### 按当前问题选 Skill
 
-| 场景 | 使用入口 |
-| --- | --- |
-| 图解需求细节、字段与公式，核验陌生方案并明确待确认选择 | [bridge-ai-knowledge-gaps](skills/bridge-ai-knowledge-gaps/SKILL.md) |
-| 功能主体完成后保持本地环境可用，持续联调、修复与验证 | [run-local-debug-loop](skills/run-local-debug-loop/SKILL.md) |
-| 为多页面、多角色功能建立人工验收进度清单 | [track-manual-ui-acceptance](skills/track-manual-ui-acceptance/SKILL.md) |
-| AI 浏览器走查等页面或工具时卡住：明确等待信号、退出条件与受阻处理 | [run-ai-ui-walkthrough](skills/run-ai-ui-walkthrough/SKILL.md) |
-| 快速启动陌生项目，避免逐错试错和重复全量构建 | [start-unfamiliar-project-fast](skills/start-unfamiliar-project-fast/SKILL.md) |
-| 评审企业审批、OA/BPM 需求与原型，纠正概念混维和平台痕迹 | [review-enterprise-workflow-design](skills/review-enterprise-workflow-design/SKILL.md) |
-| 创建或持续演进人类可读的需求与设计文档 | [evolve-design-docs](skills/evolve-design-docs/SKILL.md) |
-| 清理发散讨论残留，形成可开发的当前基线 | [converge-requirement-docs](skills/converge-requirement-docs/SKILL.md) |
-| 独立核验其他评审者或模型的意见 | [evaluate-external-review](skills/evaluate-external-review/SKILL.md) |
-| 核验同步接口换源、字段归属、增量与旧数据退出 | [verify-data-sync-contract](skills/verify-data-sync-contract/SKILL.md) |
-| 按数据链路决定改动落点：核验字段可达性，快速修复时复用已有取值逻辑 | [trace-data-change-path](skills/trace-data-change-path/SKILL.md) |
-| 从测试工程师缺陷经验提炼交测前方向，用最小样本识别可能蒙混过关的错法 | [review-cross-layer-bugs](skills/review-cross-layer-bugs/SKILL.md) |
-| 判断新经验是否值得沉淀为 Skill | [aicoding-skill-curator](skills/aicoding-skill-curator/SKILL.md) |
+索引用于直达具体 Skill；下图只说明这些问题之间常见的关系，不再重复列一次 Skill。按当前任务选读，不要求走完一条固定流程。
+
+| 问题类别 | 当前需要 | Skill |
+| --- | --- | --- |
+| 需求与设计 | 图解字段、公式或陌生方案，核验待确认选择 | [bridge-ai-knowledge-gaps](skills/bridge-ai-knowledge-gaps/SKILL.md) |
+| 需求与设计 | 评审企业审批、OA/BPM 需求与原型 | [review-enterprise-workflow-design](skills/review-enterprise-workflow-design/SKILL.md) |
+| 需求与设计 | 创建或演进人类可读的需求与设计文档 | [evolve-design-docs](skills/evolve-design-docs/SKILL.md) |
+| 需求与设计 | 清理发散讨论，形成可开发的当前基线 | [converge-requirement-docs](skills/converge-requirement-docs/SKILL.md) |
+| 需求与设计 | 独立核验其他评审者或模型的意见 | [evaluate-external-review](skills/evaluate-external-review/SKILL.md) |
+| 数据链路 | 核验同步换源、字段归属、增量与旧数据退出 | [verify-data-sync-contract](skills/verify-data-sync-contract/SKILL.md) |
+| 数据链路 | 按实际调用链决定字段或计算改哪一层 | [trace-data-change-path](skills/trace-data-change-path/SKILL.md) |
+| 启动与联调 | 快速启动陌生项目，避免逐错试错 | [start-unfamiliar-project-fast](skills/start-unfamiliar-project-fast/SKILL.md) |
+| 启动与联调 | 保持本地环境可用，持续联调、修复与验证 | [run-local-debug-loop](skills/run-local-debug-loop/SKILL.md) |
+| 交测与验收 | 从测试缺陷经验提炼交测前方向 | [review-cross-layer-bugs](skills/review-cross-layer-bugs/SKILL.md) |
+| 交测与验收 | AI 浏览器走查时避免等页面或工具卡住 | [run-ai-ui-walkthrough](skills/run-ai-ui-walkthrough/SKILL.md) |
+| 交测与验收 | 建立多页面、多角色的人工验收进度清单 | [track-manual-ui-acceptance](skills/track-manual-ui-acceptance/SKILL.md) |
+| 经验维护 | 判断新经验是否值得沉淀为 Skill | [aicoding-skill-curator](skills/aicoding-skill-curator/SKILL.md) |
 
 Agent 只应加载与当前问题有关的最少内容。仓库经验提供判断框架，不能替代当前任务的正式需求、真实代码和验证结果。
 
 ```mermaid
 flowchart LR
-    Q{当前任务是什么}
-    Q --> A[陌生项目需要先跑起来]
-    A --> A1[start-unfamiliar-project-fast]
-    Q --> B[功能已运行，进入连续调试]
-    B --> B1[run-local-debug-loop]
-    Q --> C[需要人工逐页验收]
-    C --> C1[track-manual-ui-acceptance]
-    Q --> C2[AI 浏览器走查等待卡顿]
-    C2 --> C3[run-ai-ui-walkthrough]
-    Q --> D[需求或设计文档]
-    D --> D1[evolve-design-docs]
-    D --> D2[converge-requirement-docs]
-    Q --> E[陌生方案或外部意见]
-    E --> E1[bridge-ai-knowledge-gaps]
-    E --> E2[evaluate-external-review]
-    Q --> F[企业审批设计评审]
-    F --> F1[review-enterprise-workflow-design]
-    Q --> H[数据同步与接口换源]
-    H --> H1[verify-data-sync-contract]
-    Q --> I[按数据链路决定改哪里、复用什么]
-    I --> I1[trace-data-change-path]
-    Q --> J[交测试前设计高价值测试方向]
-    J --> J1[review-cross-layer-bugs]
-    Q --> G[发现可复用工作方法]
-    G --> G1[aicoding-skill-curator]
+    A[需求与设计] --> B[启动与联调]
+    B --> C[交测与验收]
+    C -.缺陷回流.-> B
+    D[数据链路] -.提供事实依据.-> A
+    D -.定位改动落点.-> B
+    C -.形成可复用方法.-> E[经验维护]
 ```
 
 ## 内容原则
