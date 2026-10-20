@@ -32,7 +32,7 @@
 | 图解需求细节、字段与公式，核验陌生方案并明确待确认选择 | [bridge-ai-knowledge-gaps](skills/bridge-ai-knowledge-gaps/SKILL.md) |
 | 功能主体完成后保持本地环境可用，持续联调、修复与验证 | [run-local-debug-loop](skills/run-local-debug-loop/SKILL.md) |
 | 为多页面、多角色功能建立人工验收进度清单 | [track-manual-ui-acceptance](skills/track-manual-ui-acceptance/SKILL.md) |
-| AI 驱动浏览器逐页走查时操作卡顿：点击键入失效、弹层误判、反复重试 | [run-ai-ui-walkthrough](skills/run-ai-ui-walkthrough/SKILL.md) |
+| AI 浏览器走查等页面或工具时卡住：明确等待信号、退出条件与受阻处理 | [run-ai-ui-walkthrough](skills/run-ai-ui-walkthrough/SKILL.md) |
 | 快速启动陌生项目，避免逐错试错和重复全量构建 | [start-unfamiliar-project-fast](skills/start-unfamiliar-project-fast/SKILL.md) |
 | 评审企业审批、OA/BPM 需求与原型，纠正概念混维和平台痕迹 | [review-enterprise-workflow-design](skills/review-enterprise-workflow-design/SKILL.md) |
 | 创建或持续演进人类可读的需求与设计文档 | [evolve-design-docs](skills/evolve-design-docs/SKILL.md) |
@@ -54,7 +54,7 @@ flowchart LR
     B --> B1[run-local-debug-loop]
     Q --> C[需要人工逐页验收]
     C --> C1[track-manual-ui-acceptance]
-    Q --> C2[AI 浏览器走查操作卡顿]
+    Q --> C2[AI 浏览器走查等待卡顿]
     C2 --> C3[run-ai-ui-walkthrough]
     Q --> D[需求或设计文档]
     D --> D1[evolve-design-docs]

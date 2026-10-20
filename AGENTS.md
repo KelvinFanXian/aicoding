@@ -91,7 +91,7 @@
 - 面对陌生技术方案、无法独立核验 AI 结论或担心 AI 自由发挥时，使用 `skills/bridge-ai-knowledge-gaps/SKILL.md`，把结论转成有证据、可理解、可逐步验证的决策。
 - 功能主体完成后进入本地联调、需要保持前后端随时可用并连续修复缺陷时，使用 `skills/run-local-debug-loop/SKILL.md`，建立运行基线、可用性检查、缺陷队列和“修复后由用户验证”的闭环。
 - 页面较多、角色较多或需要逐页记录人工验收进度时，使用 `skills/track-manual-ui-acceptance/SKILL.md`，按模块分组、组内由易到难，提供真实入口，分开人工验收与 AI 走查结果。
-- AI 驱动真实浏览器逐页走查，出现点击或键入不生效、弹层状态误判、同一操作反复重试空转时，使用 `skills/run-ai-ui-walkthrough/SKILL.md`：时间盒限步、先核对弹层状态再重试、定位收窄、输入降级互备，以及「零请求」式无破坏验证。
+- AI 驱动真实浏览器走查时，出现等页面或等工具而停住、反复重试空转、操作是否生效不明时，使用 `skills/run-ai-ui-walkthrough/SKILL.md`：为等待设完成信号与退出条件，区分页面未就绪和工具阻塞，核对真实状态后继续或报告受阻。
 - 接手陌生项目并被要求尽快启动、编译或进入首个可观察页面时，使用 `skills/start-unfamiliar-project-fast/SKILL.md`，先做环境预检和批量诊断，再用最低成本探针逐级验证。
 - 评审国内企业审批、OA/BPM 的需求或原型，尤其需要识别概念混维、低代码痕迹和无真实场景的平台功能时，使用 `skills/review-enterprise-workflow-design/SKILL.md`。
 - 创建、评审、重组或持续演进需求与软件设计文档时，使用 `skills/evolve-design-docs/SKILL.md`，遵循人类阅读优先、ER 建模优先、Mermaid 按问题选型和正文去噪的文档习惯。
