@@ -2,6 +2,16 @@
 
 记录经验的去向与实际变化：是新增 Skill，还是归纳到已有 Skill。具体工作方法以对应 Skill 为准，提交细节通过 Git 历史追溯。
 
+## 2026-10-20 · 按第一基线收敛项目入口与重复内容
+
+| 原内容或经验 | 处理方式 | 当前归属 | 本次吸收要点 |
+| --- | --- | --- | --- |
+| 经验入库与图示原则过于流程化 | **修改现有方法** | [AGENTS.md](AGENTS.md)、[README.md](README.md) | 不为纯通用规则另造观察记录；按理解收益选用 Mermaid；长章节才要求结论先行，易误用结论才强调边界；README 的图从重复能力表改为展示常见交付链路 |
+| 启动 Skill 的“慢动作”反面清单重复正面方法，且并行阈值过细 | **修订已有 Skill** | [start-unfamiliar-project-fast](skills/start-unfamiliar-project-fast/SKILL.md) | 保留预检、归因、低成本探针与并行判断，删除重复清单和固定秒数 |
+| 设计文档 Skill 末尾的 Skill 维护条款与交付自检重复正文及仓库规则 | **修订已有 Skill** | [evolve-design-docs](skills/evolve-design-docs/SKILL.md) | 保留人读优先、ER 建模、图文分工和文档职责，移除重复的元规则与检查清单 |
+| 本地 Debug Skill 的优先级样例可能覆盖项目既有口径 | **修订已有 Skill** | [run-local-debug-loop](skills/run-local-debug-loop/SKILL.md) | 明确优先沿用项目已有约定，P0–P3 仅作为无约定时的参考 |
+| Skill 沉淀规则仍要求每次同步已改成示意关系的 README 图 | **修订已有 Skill** | [aicoding-skill-curator](skills/aicoding-skill-curator/SKILL.md) | 描述和总纲索引保持同步；关系图仅在涉及该场景时更新 |
+
 ## 2026-10-20 · 收敛 AI 浏览器走查的等待卡顿处理
 
 | 原内容或经验 | 处理方式 | 当前归属 | 本次吸收要点 |

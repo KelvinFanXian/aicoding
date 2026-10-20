@@ -45,33 +45,17 @@
 
 Agent 只应加载与当前问题有关的最少内容。仓库经验提供判断框架，不能替代当前任务的正式需求、真实代码和验证结果。
 
+常见交付链路中的 Skill 关系如下；按实际任务选用，不要求依次调用：
+
 ```mermaid
 flowchart LR
-    Q{当前任务是什么}
-    Q --> A[陌生项目需要先跑起来]
-    A --> A1[start-unfamiliar-project-fast]
-    Q --> B[功能已运行，进入连续调试]
-    B --> B1[run-local-debug-loop]
-    Q --> C[需要人工逐页验收]
-    C --> C1[track-manual-ui-acceptance]
-    Q --> C2[AI 浏览器走查等待卡顿]
-    C2 --> C3[run-ai-ui-walkthrough]
-    Q --> D[需求或设计文档]
-    D --> D1[evolve-design-docs]
-    D --> D2[converge-requirement-docs]
-    Q --> E[陌生方案或外部意见]
-    E --> E1[bridge-ai-knowledge-gaps]
-    E --> E2[evaluate-external-review]
-    Q --> F[企业审批设计评审]
-    F --> F1[review-enterprise-workflow-design]
-    Q --> H[数据同步与接口换源]
-    H --> H1[verify-data-sync-contract]
-    Q --> I[按数据链路决定改哪里、复用什么]
-    I --> I1[trace-data-change-path]
-    Q --> J[交测试前设计高价值测试方向]
-    J --> J1[review-cross-layer-bugs]
-    Q --> G[发现可复用工作方法]
-    G --> G1[aicoding-skill-curator]
+    A[陌生项目启动] --> B[本地联调]
+    B --> C[交测前自查]
+    C --> D{走查与验收}
+    D --> E[AI 浏览器走查]
+    D --> F[人工验收记录]
+    E --> B
+    F --> B
 ```
 
 ## 内容原则
@@ -79,7 +63,7 @@ flowchart LR
 1. **通用化**：公开内容不依赖某个项目背景才能理解。
 2. **可验证**：明确区分事实、推断、建议和假设。
 3. **持续修订**：发现新证据时更新既有结论，不保留互相冲突的过时口径。
-4. **经验优先**：记录判断方法、适用条件和失败模式，而不是项目流水账。
+4. **判断优先**：只记录会改变决策的适用条件、依据和失败模式，而不是项目流水账或常识清单。
 5. **公开安全**：任何项目名称、路径、原文、代码、截图、日志和数据都不进入 Git。
 
 ## 仓库结构
