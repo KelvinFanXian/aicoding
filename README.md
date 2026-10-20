@@ -38,7 +38,7 @@
 | 独立核验其他评审者或模型的意见 | [evaluate-external-review](skills/evaluate-external-review/SKILL.md) |
 | 核验同步接口换源、字段归属、增量与旧数据退出 | [verify-data-sync-contract](skills/verify-data-sync-contract/SKILL.md) |
 | 按数据链路决定改动落点：核验字段可达性，快速修复时复用已有取值逻辑 | [trace-data-change-path](skills/trace-data-change-path/SKILL.md) |
-| 功能交测试前沿受影响链路自查字段、校验、权限、状态和页面可见性 | [review-cross-layer-bugs](skills/review-cross-layer-bugs/SKILL.md) |
+| 从测试工程师缺陷经验提炼交测前方向，设计边界与动作组合并核对预期 | [review-cross-layer-bugs](skills/review-cross-layer-bugs/SKILL.md) |
 | 判断新经验是否值得沉淀为 Skill | [aicoding-skill-curator](skills/aicoding-skill-curator/SKILL.md) |
 
 Agent 只应加载与当前问题有关的最少内容。仓库经验提供判断框架，不能替代当前任务的正式需求、真实代码和验证结果。
@@ -66,7 +66,7 @@ flowchart LR
     H --> H1[verify-data-sync-contract]
     Q --> I[按数据链路决定改哪里、复用什么]
     I --> I1[trace-data-change-path]
-    Q --> J[交测试前主动找跨层缺陷]
+    Q --> J[交测试前设计高价值测试方向]
     J --> J1[review-cross-layer-bugs]
     Q --> G[发现可复用工作方法]
     G --> G1[aicoding-skill-curator]
