@@ -92,6 +92,7 @@
 - 收到其他评审者或模型的意见，需要将其作为参考并保留独立判断时，使用 `skills/evaluate-external-review/SKILL.md`。
 - 对接数据同步、切换源接口，或调整记录标识与字段覆盖规则时，使用 `skills/verify-data-sync-contract/SKILL.md`，核验粒度、身份、字段归属、增量与退出路径。
 - 判断字段展示或派生值计算该改前端、接口还是业务逻辑，尤其快速修复时，使用 `skills/trace-data-change-path/SKILL.md`，沿实际调用链核验数据可达性，优先复用已验证的同口径实现。
+- 功能基本完成、准备交测试且希望提前发现跨页面、跨层的同类缺陷时，使用 `skills/review-cross-layer-bugs/SKILL.md`，按本轮改动选择少量高价值探针，检查字段、校验、权限、状态与页面可见性。
 - 维护模式下发现可跨项目复用、已经验证且会改变后续工作方式的方法时，使用 `skills/aicoding-skill-curator/SKILL.md` 判断是否值得沉淀；只读模式不得因此修改本仓库。
 
 ## 内容质量
