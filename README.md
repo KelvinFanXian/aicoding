@@ -27,7 +27,7 @@
 
 ### 按当前问题选 Skill
 
-索引用于直达具体 Skill；下图只说明这些问题之间常见的关系，不再重复列一次 Skill。按当前任务选读，不要求走完一条固定流程。
+表格用于直达具体 Skill；下图按当前任务展示完整路由，不表示必须依次完成这些任务。
 
 | 问题类别 | 当前需要 | Skill |
 | --- | --- | --- |
@@ -49,12 +49,25 @@ Agent 只应加载与当前问题有关的最少内容。仓库经验提供判�
 
 ```mermaid
 flowchart LR
-    A[需求与设计] --> B[启动与联调]
-    B --> C[交测与验收]
-    C -.缺陷回流.-> B
-    D[数据链路] -.提供事实依据.-> A
-    D -.定位改动落点.-> B
-    C -.形成可复用方法.-> E[经验维护]
+    Q{"当前任务是什么？"}
+    Q --> A["需求与设计"]
+    A --> A1["解释陌生方案或需求细节<br/>bridge-ai-knowledge-gaps"]
+    A --> A2["评审企业审批设计<br/>review-enterprise-workflow-design"]
+    A --> A3["创建或演进设计文档<br/>evolve-design-docs"]
+    A --> A4["收敛需求文档<br/>converge-requirement-docs"]
+    A --> A5["核验外部评审意见<br/>evaluate-external-review"]
+    Q --> B["数据链路"]
+    B --> B1["核验同步契约<br/>verify-data-sync-contract"]
+    B --> B2["确定数据改动落点<br/>trace-data-change-path"]
+    Q --> C["启动与联调"]
+    C --> C1["快速启动陌生项目<br/>start-unfamiliar-project-fast"]
+    C --> C2["持续本地联调<br/>run-local-debug-loop"]
+    Q --> D["交测与验收"]
+    D --> D1["交测前自查<br/>review-cross-layer-bugs"]
+    D --> D2["AI 浏览器走查<br/>run-ai-ui-walkthrough"]
+    D --> D3["人工验收跟踪<br/>track-manual-ui-acceptance"]
+    Q --> E["经验维护"]
+    E --> E1["判断经验是否入库<br/>aicoding-skill-curator"]
 ```
 
 ## 内容原则
