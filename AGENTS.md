@@ -1,5 +1,7 @@
 # 工作约束
 
+本仓库的分支方式见 [BRANCHING.md](BRANCHING.md)；维护前先核实实际 Git 状态。
+
 ## 第一基线：信任模型，提供关键判断
 
 - 面向有能力的模型写经验：只记录会改变它实际决定的触发条件、判断依据、反例或边界；通用常识和“认真分析”式提醒不用写。
@@ -93,6 +95,7 @@
 - 接手陌生项目并被要求尽快启动、编译或进入首个可观察页面时，使用 `skills/start-unfamiliar-project-fast/SKILL.md`，先做环境预检和批量诊断，再用最低成本探针逐级验证。
 - 评审国内企业审批、OA/BPM 的需求或原型，尤其需要识别概念混维、低代码痕迹和无真实场景的平台功能时，使用 `skills/review-enterprise-workflow-design/SKILL.md`。
 - 创建、评审、重组或持续演进需求与软件设计文档时，使用 `skills/evolve-design-docs/SKILL.md`，遵循人类阅读优先、ER 建模优先、Mermaid 按问题选型和正文去噪的文档习惯。
+- 准备新增或调整数据库表、字段、迁移，或复核重复存储与设计整改范围时，使用 `skills/review-persistence-schema/SKILL.md`，先判断事实归属、独立生命周期和已确认的实施边界。
 - 发散讨论后需要清理需求或设计文档、消除旧方案残留并形成开发基线时，使用 `skills/converge-requirement-docs/SKILL.md`。
 - 收到其他评审者或模型的意见，需要将其作为参考并保留独立判断时，使用 `skills/evaluate-external-review/SKILL.md`。
 - 对接数据同步、切换源接口，或调整记录标识与字段覆盖规则时，使用 `skills/verify-data-sync-contract/SKILL.md`，核验粒度、身份、字段归属、增量与退出路径。

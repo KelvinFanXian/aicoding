@@ -6,6 +6,8 @@
 
 查看 [更新日志](CHANGELOG.md)，了解哪些经验新建了 Skill、哪些归纳进了已有 Skill。
 
+仓库维护使用单一 `main` 分支，操作规则见 [分支管理](BRANCHING.md)。
+
 这里不收集具体项目资料，而是从真实开发过程中提炼可以跨项目复用的经验：需求澄清、领域建模、软件设计、编码协作、验证方法，以及人与 AI 共同工作的纪律。
 
 ## 给 Agent 的入口
@@ -34,6 +36,7 @@
 | 需求与设计 | 图解字段、公式或陌生方案，核验待确认选择 | [bridge-ai-knowledge-gaps](skills/bridge-ai-knowledge-gaps/SKILL.md) |
 | 需求与设计 | 评审企业审批、OA/BPM 需求与原型 | [review-enterprise-workflow-design](skills/review-enterprise-workflow-design/SKILL.md) |
 | 需求与设计 | 创建或演进人类可读的需求与设计文档 | [evolve-design-docs](skills/evolve-design-docs/SKILL.md) |
+| 需求与设计 | 评审新增表、字段与数据库迁移的必要性和范围 | [review-persistence-schema](skills/review-persistence-schema/SKILL.md) |
 | 需求与设计 | 清理发散讨论，形成可开发的当前基线 | [converge-requirement-docs](skills/converge-requirement-docs/SKILL.md) |
 | 需求与设计 | 独立核验其他评审者或模型的意见 | [evaluate-external-review](skills/evaluate-external-review/SKILL.md) |
 | 数据链路 | 核验同步换源、字段归属、增量与旧数据退出 | [verify-data-sync-contract](skills/verify-data-sync-contract/SKILL.md) |
@@ -55,6 +58,7 @@ flowchart LR
     A --> A1["解释陌生方案或需求细节<br/>bridge-ai-knowledge-gaps"]
     A --> A2["评审企业审批设计<br/>review-enterprise-workflow-design"]
     A --> A3["创建或演进设计文档<br/>evolve-design-docs"]
+    A --> A6["评审表与字段变更<br/>review-persistence-schema"]
     A --> A4["收敛需求文档<br/>converge-requirement-docs"]
     A --> A5["核验外部评审意见<br/>evaluate-external-review"]
     Q --> B["数据链路"]
