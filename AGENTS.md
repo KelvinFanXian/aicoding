@@ -95,7 +95,7 @@
 - 接手陌生项目并被要求尽快启动、编译或进入首个可观察页面时，使用 `skills/start-unfamiliar-project-fast/SKILL.md`，先做环境预检和批量诊断，再用最低成本探针逐级验证。
 - 评审国内企业审批、OA/BPM 的需求或原型，尤其需要识别概念混维、低代码痕迹和无真实场景的平台功能时，使用 `skills/review-enterprise-workflow-design/SKILL.md`。
 - 创建、评审、重组或持续演进需求与软件设计文档时，使用 `skills/evolve-design-docs/SKILL.md`，遵循人类阅读优先、ER 建模优先、Mermaid 按问题选型和正文去噪的文档习惯。
-- 建立或调整跨文档事项编号时，使用 `skills/standardize-document-ids/SKILL.md`，判断是否需要编号，避免陌生缩写，明确代码释义与唯一登记处。
+- 建立或调整跨文档事项编号时，使用 `skills/standardize-document-ids/SKILL.md`，按 Q/DR/T/P/B 固定类别及生命周期发号，明确作用域和唯一登记处，避免陌生前缀。
 - 准备新增或调整数据库表、字段、迁移，或复核重复存储与设计整改范围时，使用 `skills/review-persistence-schema/SKILL.md`，先判断事实归属、独立生命周期和已确认的实施边界。
 - 发散讨论后需要清理需求或设计文档、消除旧方案残留并形成开发基线时，使用 `skills/converge-requirement-docs/SKILL.md`。
 - 收到其他评审者或模型的意见，需要将其作为参考并保留独立判断时，使用 `skills/evaluate-external-review/SKILL.md`。

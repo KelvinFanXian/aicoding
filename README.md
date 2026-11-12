@@ -36,7 +36,7 @@
 | 需求与设计 | 图解字段、公式或陌生方案，核验待确认选择 | [bridge-ai-knowledge-gaps](skills/bridge-ai-knowledge-gaps/SKILL.md) |
 | 需求与设计 | 评审企业审批、OA/BPM 需求与原型 | [review-enterprise-workflow-design](skills/review-enterprise-workflow-design/SKILL.md) |
 | 需求与设计 | 创建或演进人类可读的需求与设计文档 | [evolve-design-docs](skills/evolve-design-docs/SKILL.md) |
-| 需求与设计 | 建立可读的跨文档事项编号与登记规则 | [standardize-document-ids](skills/standardize-document-ids/SKILL.md) |
+| 需求与设计 | 按固定类别码建立可读的跨文档事项编号 | [standardize-document-ids](skills/standardize-document-ids/SKILL.md) |
 | 需求与设计 | 评审新增表、字段与数据库迁移的必要性和范围 | [review-persistence-schema](skills/review-persistence-schema/SKILL.md) |
 | 需求与设计 | 清理发散讨论，形成可开发的当前基线 | [converge-requirement-docs](skills/converge-requirement-docs/SKILL.md) |
 | 需求与设计 | 独立核验其他评审者或模型的意见 | [evaluate-external-review](skills/evaluate-external-review/SKILL.md) |
