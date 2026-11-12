@@ -36,7 +36,7 @@
 | 需求与设计 | 图解字段、公式或陌生方案，核验待确认选择 | [bridge-ai-knowledge-gaps](skills/bridge-ai-knowledge-gaps/SKILL.md) |
 | 需求与设计 | 评审企业审批、OA/BPM 需求与原型 | [review-enterprise-workflow-design](skills/review-enterprise-workflow-design/SKILL.md) |
 | 需求与设计 | 创建或演进人类可读的需求与设计文档 | [evolve-design-docs](skills/evolve-design-docs/SKILL.md) |
-| 需求与设计 | 按固定类别码建立可读的跨文档事项编号 | [standardize-document-ids](skills/standardize-document-ids/SKILL.md) |
+| 需求与设计 | 建立编号、登记处、基线与归档的项目文档规范 | [standardize-project-docs](skills/standardize-project-docs/SKILL.md) |
 | 需求与设计 | 评审新增表、字段与数据库迁移的必要性和范围 | [review-persistence-schema](skills/review-persistence-schema/SKILL.md) |
 | 需求与设计 | 清理发散讨论，形成可开发的当前基线 | [converge-requirement-docs](skills/converge-requirement-docs/SKILL.md) |
 | 需求与设计 | 独立核验其他评审者或模型的意见 | [evaluate-external-review](skills/evaluate-external-review/SKILL.md) |
@@ -59,7 +59,7 @@ flowchart LR
     A --> A1["解释陌生方案或需求细节<br/>bridge-ai-knowledge-gaps"]
     A --> A2["评审企业审批设计<br/>review-enterprise-workflow-design"]
     A --> A3["创建或演进设计文档<br/>evolve-design-docs"]
-    A --> A7["规范跨文档编号<br/>standardize-document-ids"]
+    A --> A7["规范编号与文档归属<br/>standardize-project-docs"]
     A --> A6["评审表与字段变更<br/>review-persistence-schema"]
     A --> A4["收敛需求文档<br/>converge-requirement-docs"]
     A --> A5["核验外部评审意见<br/>evaluate-external-review"]
