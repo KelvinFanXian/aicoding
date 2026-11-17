@@ -39,7 +39,7 @@
 | 需求与设计 | 建立编号、登记处、基线与归档的项目文档规范 | [standardize-project-docs](skills/standardize-project-docs/SKILL.md) |
 | 需求与设计 | 评审新增表、字段与数据库迁移的必要性和范围 | [review-persistence-schema](skills/review-persistence-schema/SKILL.md) |
 | 需求与设计 | 清理发散讨论，形成可开发的当前基线 | [converge-requirement-docs](skills/converge-requirement-docs/SKILL.md) |
-| 需求与设计 | 独立核验其他评审者或模型的意见 | [evaluate-external-review](skills/evaluate-external-review/SKILL.md) |
+| 需求与设计 | 独立核验外部评审意见或缺陷报告 | [evaluate-external-review](skills/evaluate-external-review/SKILL.md) |
 | 数据链路 | 核验同步换源、字段归属、增量与旧数据退出 | [verify-data-sync-contract](skills/verify-data-sync-contract/SKILL.md) |
 | 数据链路 | 按实际调用链决定字段或计算改哪一层 | [trace-data-change-path](skills/trace-data-change-path/SKILL.md) |
 | 启动与联调 | 快速启动陌生项目，避免逐错试错 | [start-unfamiliar-project-fast](skills/start-unfamiliar-project-fast/SKILL.md) |
@@ -62,7 +62,7 @@ flowchart LR
     A --> A7["规范编号与文档归属<br/>standardize-project-docs"]
     A --> A6["评审表与字段变更<br/>review-persistence-schema"]
     A --> A4["收敛需求文档<br/>converge-requirement-docs"]
-    A --> A5["核验外部评审意见<br/>evaluate-external-review"]
+    A --> A5["核验外部意见或缺陷报告<br/>evaluate-external-review"]
     Q --> B["数据链路"]
     B --> B1["核验同步契约<br/>verify-data-sync-contract"]
     B --> B2["确定数据改动落点<br/>trace-data-change-path"]

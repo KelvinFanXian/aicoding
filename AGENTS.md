@@ -98,7 +98,7 @@
 - 建立项目文档规范，或调整跨文档编号、登记处、当前基线与归档关系时，使用 `skills/standardize-project-docs/SKILL.md`，按已登记类别发号；需要新码时先核对含义与旧号冲突并注册，再保证每项事实只有一个当前权威位置。
 - 准备新增或调整数据库表、字段、迁移，或复核重复存储与设计整改范围时，使用 `skills/review-persistence-schema/SKILL.md`，先判断事实归属、独立生命周期和已确认的实施边界。
 - 发散讨论后需要清理需求或设计文档、消除旧方案残留并形成开发基线时，使用 `skills/converge-requirement-docs/SKILL.md`。
-- 收到其他评审者或模型的意见，需要将其作为参考并保留独立判断时，使用 `skills/evaluate-external-review/SKILL.md`。
+- 收到外部评审意见或测试缺陷报告，需要核验其预期、归因和建议处理方向时，使用 `skills/evaluate-external-review/SKILL.md`。
 - 对接数据同步、切换源接口，或调整记录标识与字段覆盖规则时，使用 `skills/verify-data-sync-contract/SKILL.md`，核验粒度、身份、字段归属、增量与退出路径。
 - 判断字段展示或派生值计算该改前端、接口还是业务逻辑，尤其快速修复时，使用 `skills/trace-data-change-path/SKILL.md`，沿实际调用链核验数据可达性，优先复用已验证的同口径实现。
 - 功能准备交测试，或用户希望从测试工程师的缺陷经验提取测试前方向时，使用 `skills/review-cross-layer-bugs/SKILL.md`：先找可能蒙混过关的错法，再用有独立预期的最小样本区分对错，按证据判定结果。

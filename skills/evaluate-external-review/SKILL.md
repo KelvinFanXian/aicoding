@@ -1,6 +1,6 @@
 ---
 name: evaluate-external-review
-description: Independently evaluate feedback, analysis, or prompts produced by another reviewer or AI before adopting them. Use when external conclusions are supplied as reference and must be checked against authoritative requirements, source artifacts, and verified code; do not use when the supplied text is itself an explicit authoritative instruction.
+description: Independently evaluate external review comments or defect reports before adopting their conclusions. Use when another reviewer, tester, or AI supplies a diagnosis or proposed fix that must be checked against authoritative requirements and observed behavior; do not use when the supplied text is itself an explicit authoritative instruction.
 ---
 
 # Evaluate External Review
@@ -28,7 +28,7 @@ description: Independently evaluate feedback, analysis, or prompts produced by a
 
 ## 拆开现象与归因
 
-诊断意见分别核对：**观察到什么 → 哪个机制能造成它 → 本次是否具备触发条件 → 影响哪些环境或版本**。现象成立不代表整条因果链成立；历史文档写了“根因”或“已验证”，也要看验证的具体对象。
+诊断意见分别核对：**观察到什么 → 预期依据是什么 → 哪个机制能造成它 → 本次是否具备触发条件 → 影响哪些环境或版本**。对缺陷报告，还要核对观察发生在哪个操作阶段、是否能从实际入口到达；中间状态允许存在，不等于最终操作也应放行。现象成立不代表报告的预期或归因成立；若只成立一部分，就按证据改写处理目标。历史文档写了“根因”或“已验证”，也要看验证的具体对象。
 
 例如持久化锁标志为真，只证明存在占用记录，不足以证明持有进程已死；“异常退出可能遗留锁”也不等于每次异常退出都会如此。处置依赖持有者状态、实际启用的组件及所处阶段，不能从一张截图直接跳到清锁或改全局配置。
 
