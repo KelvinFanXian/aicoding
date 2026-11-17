@@ -8,6 +8,7 @@
 | --- | --- | --- | --- |
 | 外部缺陷报告中的现象、预期和归因可能分别成立或不成立 | **增强已有 Skill** | [evaluate-external-review](skills/evaluate-external-review/SKILL.md) | 核对预期依据、操作阶段和实际入口；部分成立时按证据改写处理目标，不沿报告方案直接修改 |
 | 状态变更的表面结果可能掩盖关联对象仍受限 | **增强已有 Skill** | [review-cross-layer-bugs](skills/review-cross-layer-bugs/SKILL.md) | 区分中间态与终态的约束时机；反向或终止后检查关联对象及后续操作是否符合已确认规则 |
+| 只记录单次缺陷处理，未把漏检变成下一轮主动识别能力 | **修订已有 Skill** | [review-cross-layer-bugs](skills/review-cross-layer-bugs/SKILL.md) | 按错误机制维护识别节点；重复缺陷先判断节点缺失、样本失效还是执行遗漏，再更新交测前自查 |
 
 ## 2026-11-12 · 建立项目文档治理方法
 

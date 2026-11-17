@@ -44,7 +44,7 @@
 | 数据链路 | 按实际调用链决定字段或计算改哪一层 | [trace-data-change-path](skills/trace-data-change-path/SKILL.md) |
 | 启动与联调 | 快速启动陌生项目，避免逐错试错 | [start-unfamiliar-project-fast](skills/start-unfamiliar-project-fast/SKILL.md) |
 | 启动与联调 | 保持本地环境可用，持续联调、修复与验证 | [run-local-debug-loop](skills/run-local-debug-loop/SKILL.md) |
-| 交测与验收 | 从测试缺陷经验提炼交测前方向 | [review-cross-layer-bugs](skills/review-cross-layer-bugs/SKILL.md) |
+| 交测与验收 | 积累缺陷识别树，交测前主动自查 | [review-cross-layer-bugs](skills/review-cross-layer-bugs/SKILL.md) |
 | 交测与验收 | AI 浏览器走查时避免等页面或工具卡住 | [run-ai-ui-walkthrough](skills/run-ai-ui-walkthrough/SKILL.md) |
 | 交测与验收 | 基于 AI 走查证据，引导开发人员理解业务并亲自验收 | [ai-guided-walkthrough](skills/ai-guided-walkthrough/SKILL.md) |
 | 交测与验收 | 建立多页面、多角色的人工验收进度清单 | [track-manual-ui-acceptance](skills/track-manual-ui-acceptance/SKILL.md) |
@@ -70,7 +70,7 @@ flowchart LR
     C --> C1["快速启动陌生项目<br/>start-unfamiliar-project-fast"]
     C --> C2["持续本地联调<br/>run-local-debug-loop"]
     Q --> D["交测与验收"]
-    D --> D1["交测前自查<br/>review-cross-layer-bugs"]
+    D --> D1["缺陷识别成长树与交测前自查<br/>review-cross-layer-bugs"]
     D --> D2["AI 浏览器走查<br/>run-ai-ui-walkthrough"]
     D --> D3["引导开发人员业务验收<br/>ai-guided-walkthrough"]
     D --> D4["人工验收跟踪<br/>track-manual-ui-acceptance"]
